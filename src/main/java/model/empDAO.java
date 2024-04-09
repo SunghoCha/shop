@@ -42,7 +42,7 @@ public class empDAO {
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 			String empNo = rs.getString("emp_no");
 			String empId = rs.getString("emp_id");
 			String empPw = rs.getString("emp_pw");
@@ -65,8 +65,8 @@ public class empDAO {
 	}
 
 	public int registerEmp(empVO vo) {
-		String sql = "INSERT INTO emp (emp_id, emp_pw, grade, emp_name, hire_date, update_date, create_date, active) "
-				+ "VALUES (?, ?, ?, ?, NOW(), NOW(), NOW(), ?)";
+		String sql = "INSERT INTO emp (emp_id, emp_pw, grade, emp_name, emp_job, hire_date, update_date, create_date, active) "
+				+ "VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW(), ?)";
 		getConnect();
 		int cnt = -1;
 		try {
@@ -75,7 +75,9 @@ public class empDAO {
 			psmt.setString(2, vo.getEmpPw());
 			psmt.setInt(3, vo.getGrade());
 			psmt.setString(4, vo.getEmpName());
-			psmt.setString(5, vo.getActive());
+			psmt.setString(5, vo.getEmpJob());
+			psmt.setString(6, vo.getHireDate());
+			psmt.setString(7, vo.getActive());
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

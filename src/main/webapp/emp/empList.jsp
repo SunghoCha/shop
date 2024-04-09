@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
-<link rel='stylesheet' href='css/admin.css'>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
 
@@ -35,7 +34,7 @@
 	  </tr>
 	</c:forEach>
 	<tr>
- 	 <td colspan="8" align="right"><input type="button" value="회원가입" class="btn_confirm" onclick="location.href='member/memberRegister.html'"/></td>
+ 	 <td colspan="8" align="right"><input type="button" value="회원가입" class="btn" onclick="location.href='emp/empForm.jsp'"/></td>
  	</tr>
   </table>
 </body>
